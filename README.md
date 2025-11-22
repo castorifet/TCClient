@@ -1,6 +1,6 @@
 ### ElytraSky (TC) Client
 Release date: ??-??-????
-Current version:1.0?
+Current version:1.0-dev
 
 ## Features:
 (Not planned yet)
