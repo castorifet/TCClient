@@ -42,16 +42,16 @@ public class KillAura extends Module {
     public final EnumSetting<Page> page = add(new EnumSetting<>("Page", Page.General));
 
     public final SliderSetting range =
-            add(new SliderSetting("Range", 6.0f, 0.1f, 7.0f, () -> page.getValue() == Page.General));
+            add(new SliderSetting("Range", 6.0f, 0.1f, 15.0f, () -> page.getValue() == Page.General));
     private final EnumSetting<Cooldown> cd = add(new EnumSetting<>("CooldownMode", Cooldown.Delay, () -> page.getValue() == Page.General));
     private final SliderSetting cooldown =
             add(new SliderSetting("Cooldown", 1.1f, 0f, 1.2f, 0.01, () -> page.getValue() == Page.General));
      private final SliderSetting wallRange =
-            add(new SliderSetting("WallRange", 6.0f, 0.1f, 7.0f, () -> page.getValue() == Page.General));
+            add(new SliderSetting("WallRange", 6.0f, 0.1f, 15.0f, () -> page.getValue() == Page.General));
     private final BooleanSetting whileEating =
             add(new BooleanSetting("WhileUsing", true, () -> page.getValue() == Page.General));
     private final BooleanSetting weaponOnly =
-            add(new BooleanSetting("WeaponOnly", true, () -> page.getValue() == Page.General));
+            add(new BooleanSetting("WeaponOnly", false, () -> page.getValue() == Page.General));
     private final EnumSetting<SwingSide> swingMode = add(new EnumSetting<>("Swing", SwingSide.All, () -> page.getValue() == Page.General));
     private final BooleanSetting onlyCritical =
             add(new BooleanSetting("OnlyCritical", false, () -> page.getValue() == Page.General));
@@ -81,7 +81,7 @@ public class KillAura extends Module {
     private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Box, () -> page.getValue() == Page.Render));
     private final ColorSetting color = add(new ColorSetting("Color", new Color(255, 255, 255, 50), () -> page.getValue() == Page.Render));
     private final ColorSetting hitColor = add(new ColorSetting("HitColor", new Color(255, 255, 255, 150), () -> page.getValue() == Page.Render));
-    public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 2000, 1, () -> page.getValue() == Page.Render && mode.is(TargetESP.Box)));
+    public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 50, 0, 2000, 1, () -> page.getValue() == Page.Render && mode.is(TargetESP.Box)));
     public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> page.getValue() == Page.Render && mode.is(TargetESP.Box)));
 
     private final Animation animation = new Animation();
@@ -99,7 +99,7 @@ public class KillAura extends Module {
 
     public KillAura() {
         super("KillAura", Category.Combat);
-        setChinese("杀戮光环");
+        setChinese("KillAura");
         INSTANCE = this;
     }
 

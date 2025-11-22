@@ -10,7 +10,7 @@ import java.util.List;
 public class FriendCommand extends Command {
 
 	public FriendCommand() {
-		super("friend", "[name/reset/list] | [add/remove] [name]");
+		super("friend", "[name/reset/list] | [add/remove] [player_name]");
 	}
 
 	@Override
@@ -22,12 +22,12 @@ public class FriendCommand extends Command {
         switch (parameters[0]) {
             case "reset" -> {
                 Alien.FRIEND.friendList.clear();
-                CommandManager.sendChatMessage("§fFriends list got reset");
+                CommandManager.sendChatMessage("§fFriends list reset.");
                 return;
             }
             case "list" -> {
                 if (Alien.FRIEND.friendList.isEmpty()) {
-                    CommandManager.sendChatMessage("§fFriends list is empty");
+                    CommandManager.sendChatMessage("§fFriends list is empty!");
                     return;
                 }
                 StringBuilder friends = new StringBuilder();
@@ -57,7 +57,7 @@ public class FriendCommand extends Command {
             case "add" -> {
                 if (parameters.length == 2) {
                     Alien.FRIEND.addFriend(parameters[1]);
-                    CommandManager.sendChatMessage("§f" + parameters[1] + (Alien.FRIEND.isFriend(parameters[1]) ? " §ahas been friended" : " §chas been unfriended"));
+                    CommandManager.sendChatMessage("§f" + parameters[1] + (Alien.FRIEND.isFriend(parameters[1]) ? " §ahas been added to friends" : " §chas been removed from friends"));
                     return;
                 }
                 sendUsage();
@@ -66,7 +66,7 @@ public class FriendCommand extends Command {
             case "remove" -> {
                 if (parameters.length == 2) {
                     Alien.FRIEND.removeFriend(parameters[1]);
-                    CommandManager.sendChatMessage("§f" + parameters[1] + (Alien.FRIEND.isFriend(parameters[1]) ? " §ahas been friended" : " §chas been unfriended"));
+                    CommandManager.sendChatMessage("§f" + parameters[1] + (Alien.FRIEND.isFriend(parameters[1]) ? " §ahas been added to friends" : " §chas been removed from friends"));
                     return;
                 }
                 sendUsage();
@@ -75,7 +75,7 @@ public class FriendCommand extends Command {
         }
 
         if (parameters.length == 1) {
-			CommandManager.sendChatMessage("§f" + parameters[0] + (Alien.FRIEND.isFriend(parameters[0]) ? " §ais friended" : " §cisn't friended"));
+			CommandManager.sendChatMessage("§f" + parameters[0] + (Alien.FRIEND.isFriend(parameters[0]) ? " §ais in friends list " : " §cisn't in friends list"));
 			return;
 		}
 

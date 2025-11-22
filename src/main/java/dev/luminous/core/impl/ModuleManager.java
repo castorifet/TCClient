@@ -54,7 +54,6 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoEat());
         addModule(new AutoEZ());
         addModule(new SelfTrap());
-        addModule(new InventorySorter());
         addModule(new OffFirework());
         addModule(new AutoEXP());
         addModule(new AutoHeal());
@@ -80,7 +79,6 @@ public class ModuleManager implements Wrapper {
         addModule(new ChatAppend());
         addModule(new BaritoneModule());
         addModule(new Colors());
-        addModule(new ChestStealer());
         addModule(new LavaFiller());
         addModule(new CityESP());
         addModule(new ClickGui());

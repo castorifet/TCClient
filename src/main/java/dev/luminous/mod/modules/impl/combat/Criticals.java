@@ -17,7 +17,7 @@ public class Criticals extends Module {
     public static Criticals INSTANCE;
     public Criticals() {
         super("Criticals", Category.Combat);
-        setChinese("刀刀暴击");
+        setChinese("Criticals");
         INSTANCE = this;
     }
     private final BooleanSetting onlyGround = add(new BooleanSetting("OnlyGround", true));

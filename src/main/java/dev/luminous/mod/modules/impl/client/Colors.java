@@ -13,7 +13,7 @@ public class Colors extends Module {
         INSTANCE = this;
     }
 
-    public final ColorSetting clientColor = add(new ColorSetting("ClientColor", new Color(255, 0, 0)).injectBoolean(true));
+    public final ColorSetting clientColor = add(new ColorSetting("ClientColor", new Color(11, 126, 215)).injectBoolean(true));
 
     @Override
     public void enable() {

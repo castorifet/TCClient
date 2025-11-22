@@ -57,7 +57,7 @@ public class Scaffold extends Module {
 
     public Scaffold() {
         super("Scaffold", Category.Movement);
-        setChinese("自动搭路");
+        setChinese("Scaffold");
     }
 
     @EventHandler(priority = EventPriority.LOW)

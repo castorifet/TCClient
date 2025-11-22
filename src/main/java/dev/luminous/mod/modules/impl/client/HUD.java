@@ -29,8 +29,8 @@ public class HUD extends Module {
     public final BooleanSetting armor = add(new BooleanSetting("Armor", true));
     public final BooleanSetting up = add(new BooleanSetting("Up", false));
     public final BooleanSetting customFont = add(new BooleanSetting("CustomFont", true));
-    public final ColorSetting color = add(new ColorSetting("Color", new Color(208, 0, 0)));
-    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(79, 0, 0)).injectBoolean(true));
+    public final ColorSetting color = add(new ColorSetting("Color", new Color(63, 143, 213)));
+    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(16, 73, 117)).injectBoolean(true));
     public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true));
     public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% %version%"));
     public final SliderSetting offset = add(new SliderSetting("Offset", 1, 0, 100, -1));
@@ -43,9 +43,9 @@ public class HUD extends Module {
     public final BooleanSetting time = add(new BooleanSetting("Time", false));
     public final BooleanSetting speed = add(new BooleanSetting("Speed", true));
     public final BooleanSetting brand = add(new BooleanSetting("Brand", false));
-    public final BooleanSetting potions = add(new BooleanSetting("Potions", true));
+    public final BooleanSetting potions = add(new BooleanSetting("Potions", false));
     public final BooleanSetting coords = add(new BooleanSetting("Coords", true));
-    private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 5, 0.1));
+    private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 10, 0.1));
     private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50));
     public HUD() {
         super("HUD", Category.Client);
@@ -92,6 +92,12 @@ public class HUD extends Module {
                     case 2 -> power = "III";
                     case 3 -> power = "IV";
                     case 4 -> power = "V";
+                    case 5 -> power = "VI";
+                    case 6 -> power = "VII";
+                    case 7 -> power = "VIII";
+                    case 8 -> power = "IX";
+                    case 9 -> power = "X";
+
                 }
                 String s = potion.getName().getString() + " " + power;
                 String s2 = getDuration(potionEffect);
@@ -103,8 +109,8 @@ public class HUD extends Module {
         }
         if (brand.getValue()) {
             String brand = (mc.isInSingleplayer() ? "Vanilla" : mc.getNetworkHandler().getBrand().replaceAll("\\(.*?\\)", ""));
-            int x = getWidth("ServerBrand " + brand);
-            drawText(drawContext, "ServerBrand §f" + brand, windowWidth - x, y);
+            int x = getWidth("Server Type " + brand);
+            drawText(drawContext, "Server Type §f" + brand, windowWidth - x, y);
             y -= height;
         }
         if (time.getValue()) {
@@ -131,7 +137,7 @@ public class HUD extends Module {
             double div = 0.05 / 3600.0;
             float timer = Alien.TIMER.get();
             final double speed = dist / div * timer;
-            String text = String.format("Speed §f%skm/h",
+            String text = String.format("Current Speed §f%skm/h",
                     decimal.format(speed));
             int width = getWidth(text);
             drawText(drawContext, text, windowWidth - width, y);

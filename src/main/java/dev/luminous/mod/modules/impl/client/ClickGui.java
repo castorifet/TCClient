@@ -25,7 +25,6 @@ public class ClickGui extends Module {
 	public final ColorSetting bind = add(new ColorSetting("Bind", new Color(255, 255, 255), () -> page.getValue() == Pages.Element).injectBoolean(false));
 	public final ColorSetting gear = add(new ColorSetting("Gear", new Color(255, 255, 255), () -> page.getValue() == Pages.Element).injectBoolean(true));
 
-	public final BooleanSetting chinese = add(new BooleanSetting("Chinese", false, () -> page.getValue() == Pages.General));
 	public final BooleanSetting font = add(new BooleanSetting("Font", true, () -> page.getValue() == Pages.General));
 	public final BooleanSetting maxFill = add(new BooleanSetting("MaxFill", false, () -> page.getValue() == Pages.General));
 	public final BooleanSetting sound = add(new BooleanSetting("Sound", true, () -> page.getValue() == Pages.General));
@@ -57,9 +56,6 @@ public class ClickGui extends Module {
 
 	@Override
 	public void onUpdate() {
-		if (chinese.getValue()) {
-			font.setValue(false);
-		}
 		if (!(mc.currentScreen instanceof ClickGuiScreen)) {
 			disable();
 		}

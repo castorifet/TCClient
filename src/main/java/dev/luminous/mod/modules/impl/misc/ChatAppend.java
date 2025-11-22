@@ -24,7 +24,7 @@ public class ChatAppend extends Module {
 			return;
 		}
 		String suffix = this.message.getValue();
-		message = message + " " + suffix;
+		message = message + " " + suffix + " | TC Client by ElytraSky";
 		event.message = message;
 	}
 }

@@ -13,7 +13,7 @@ public class Fly extends Module {
 
     public Fly() {
         super("Fly", Category.Movement);
-        setChinese("飞行");
+        setChinese("Fly");
         INSTANCE = this;
     }
     @EventHandler
@@ -21,9 +21,9 @@ public class Fly extends Module {
         mc.player.input.sneaking = false;
     }
 
-    public final SliderSetting speed = add(new SliderSetting("Speed", 1.0f, 0.1f, 10.0f));
-    private final SliderSetting sneakDownSpeed = add(new SliderSetting("DownSpeed", 1.0F, 0.1F, 10.0F));
-    private final SliderSetting upSpeed = add(new SliderSetting("UpSpeed", 1.0F, 0.1F, 10.0F));
+    public final SliderSetting speed = add(new SliderSetting("Speed", 1.0f, 0.1f, 25.0F));
+    private final SliderSetting sneakDownSpeed = add(new SliderSetting("DownSpeed", 1.0F, 0.1F, 25.0F));
+    private final SliderSetting upSpeed = add(new SliderSetting("UpSpeed", 1.0F, 0.1F, 25.0F));
     public final SliderSetting downFactor = add(new SliderSetting("DownFactor", 0f, 0.0f, 1f, 0.000001f));
     private MoveEvent event;
     @EventHandler

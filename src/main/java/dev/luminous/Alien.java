@@ -15,8 +15,8 @@ public final class Alien implements ModInitializer {
         load();
     }
 
-    public static final String NAME = "Alien";
-    public static final String VERSION = "1.3.7";
+    public static final String NAME = "TC Client";
+    public static final String VERSION = "1.0.0-dev";
     public static String PREFIX = ";";
     public static final EventBus EVENT_BUS = new EventBus();
     public static ExecutorService EXECUTOR = Executors.newCachedThreadPool();
@@ -64,7 +64,7 @@ public final class Alien implements ModInitializer {
         FPS = new FPSManager();
         SERVER = new ServerManager();
         CONFIG.loadSettings();
-        System.out.println("[" + Alien.NAME + "] loaded");
+        System.out.println("[" + Alien.NAME + "] is loaded.");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             if (loaded) {
@@ -76,18 +76,18 @@ public final class Alien implements ModInitializer {
 
     public static void unload() {
         loaded = false;
-        System.out.println("[" + Alien.NAME + "] Unloading..");
+        System.out.println("[" + Alien.NAME + "] Unloading mod....");
         EVENT_BUS.listenerMap.clear();
         ConfigManager.resetModule();
-        System.out.println("[" + Alien.NAME + "] Unloaded");
+        System.out.println("[" + Alien.NAME + "] Unload finished.");
     }
 
     public static void save() {
-        System.out.println("[" + Alien.NAME + "] Saving");
+        System.out.println("[" + Alien.NAME + "] Saving status.");
         CONFIG.saveSettings();
         FRIEND.save();
         XRAY.save();
         TRADE.save();
-        System.out.println("[" + Alien.NAME + "] Saved");
+        System.out.println("[" + Alien.NAME + "] Status saved.");
     }
 }

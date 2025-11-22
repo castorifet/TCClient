@@ -38,13 +38,13 @@ public class ElytraFly extends Module {
             add(new SliderSetting("Delay", 1000, 0, 20000, 50, () -> !mode.is(Mode.Bounce)));
     private final SliderSetting timeout = add(new SliderSetting("Timeout", 0.5F, 0.1F, 1F, () -> !mode.is(Mode.Bounce)));
     public final SliderSetting upPitch = add(new SliderSetting("UpPitch", 0.0f, 0.0f, 90.0f, () -> mode.getValue() == Mode.Control));
-    public final SliderSetting upFactor = add(new SliderSetting("UpFactor", 1.0f, 0.0f, 10.0f, () -> mode.getValue() == Mode.Control));
-    public final SliderSetting downFactor = add(new SliderSetting("FallSpeed", 1.0f, 0.0f, 10.0f, () -> mode.getValue() == Mode.Control));
-    public final SliderSetting speed = add(new SliderSetting("Speed", 1.0f, 0.1f, 10.0f, () -> mode.getValue() == Mode.Control));
+    public final SliderSetting upFactor = add(new SliderSetting("UpFactor", 1.0f, 0.0f, 20.0f, () -> mode.getValue() == Mode.Control));
+    public final SliderSetting downFactor = add(new SliderSetting("FallSpeed", 1.0f, 0.0f, 20.0f, () -> mode.getValue() == Mode.Control));
+    public final SliderSetting speed = add(new SliderSetting("Speed", 1.0f, 0.1f, 20.0f, () -> mode.getValue() == Mode.Control));
     public final BooleanSetting speedLimit = add(new BooleanSetting("SpeedLimit", true, () -> mode.getValue() == Mode.Control));
-    public final SliderSetting maxSpeed = add(new SliderSetting("MaxSpeed", 2.5f, 0.1f, 10.0f, () -> speedLimit.getValue() && mode.getValue() == Mode.Control));
+    public final SliderSetting maxSpeed = add(new SliderSetting("MaxSpeed", 2.5f, 0.1f, 20.0f, () -> speedLimit.getValue() && mode.getValue() == Mode.Control));
     public final BooleanSetting noDrag = add(new BooleanSetting("NoDrag", false, () -> mode.getValue() == Mode.Control));
-    private final SliderSetting sneakDownSpeed = add(new SliderSetting("DownSpeed", 1.0F, 0.1F, 10.0F, () -> mode.getValue() == Mode.Control));
+    private final SliderSetting sneakDownSpeed = add(new SliderSetting("DownSpeed", 1.0F, 0.1F, 20.0f, () -> mode.getValue() == Mode.Control));
     private final SliderSetting boost = add(new SliderSetting("Boost", 1F, 0.1F, 4F, () -> mode.getValue() == Mode.Boost));
     private final Timer instantFlyTimer = new Timer();
     private final Timer strictTimer = new Timer();

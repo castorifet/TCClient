@@ -24,20 +24,20 @@ public class BindCommand extends Command {
 		String moduleName = parameters[0];
 		Module module = Alien.MODULE.getModuleByName(moduleName);
 		if (module == null) {
-			CommandManager.sendChatMessage("§4Unknown module!");
+			CommandManager.sendChatMessage("§4Could not find module!");
 			return;
 		}
 		if (parameters.length == 1) {
-			CommandManager.sendChatMessage("§fPlease specify a §bkey§f.");
+			CommandManager.sendChatMessage("§fPlease specify a §bkey§fto be binded.");
 			return;
 		}
 		String rkey = parameters[1];
 		if (rkey == null) {
-			CommandManager.sendChatMessage("§4Unknown Error");
+			CommandManager.sendChatMessage("§4An unknown error has occured.");
 			return;
 		}
 		if (module.setBind(rkey.toUpperCase())) {
-			CommandManager.sendChatMessage("§fBind for §r" + module.getName() + "§f set to §r" + rkey.toUpperCase());
+			CommandManager.sendChatMessage(module.getName() + "§f has binded to §r" + rkey.toUpperCase()); /* ExampleModuleName has binded to ExampleKey */
 		}
 	}
 
