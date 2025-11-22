@@ -6,7 +6,19 @@ Current version:1.0-dev
 (Not planned yet)
 
 ## Build:
-IDK
+Make sure you have JDK 21+ installed (IntelliJ IDEA can do it automatically for you)
+
+Open Terminal(or Command Prompt on Windows)
+
+cd into the repo
+
+Type "gradlew(.bat) build"
+
+Wait for it to finish build (If some error encountered try fix it yourself instead of asking some stupid basic questions at Issue and waste our time)
+
+out jar can be found at build/libs/
+
+
 ## Feedback Group
 (No feedback group yet,but T3 is most likely to be chosen for feedback group.) 1029533840
 ## License
