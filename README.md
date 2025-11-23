@@ -16,7 +16,7 @@ Current version:1.0-dev
 
 1.0.1
 
-##Future Releases
+## Future Releases
 
 1.0.2
 
