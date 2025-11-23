@@ -2,6 +2,17 @@
 Release date: ??-??-????
 
 Current version:1.0-dev
+## Version Planning:
+
+1.0.x - Base Function Optimization (ElytraFly,HUD,KillAura) (No Anti-Cheat)
+
+1.1.x - ElytraSky-Only Features (Base Finder,etc)
+
+2.0.x - PvP Feature Optimization - Some more PvP modules
+
+3.0.x - Flying Features, Server Exploit and/or AutoCrystal CPVP Module Optimization / Stronger PvP/CPvP Effect
+
+4.0.x - Final Release - Auto Detect CPvP - Auto Obsidian - Free Customizations etc (May change)
 
 ## Features:
 (Not planned yet)
